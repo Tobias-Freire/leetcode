@@ -29,7 +29,6 @@ public class Solution {
         aux = headB;
         while (aux.next != null) {
             if (map.get(aux) != null) return aux;
-
             aux = aux.next;
         }
         if (map.get(aux) != null) return aux;
