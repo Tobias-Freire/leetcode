@@ -14,16 +14,16 @@ public class Solution {
         if (headA == null || headB == null) return null;
 
         // Map to check which nodes are present in the A list
-        HashMap<ListNode, Boolean> map = new HashMap<>();
+        HashMap<ListNode, Integer> map = new HashMap<>();
 
         // Iterate over the A list and add nodes to the map
-        if (headA.next == null) map.put(headA, true);
+        if (headA.next == null) map.put(headA, 1);
         ListNode aux = headA;
         while (aux.next != null) {
-            map.put(aux, true);
+            map.put(aux, 1);
             aux = aux.next;
         }
-        map.put(aux, true);
+        map.put(aux, 1);
 
         // Iterate over the B list and check if there is an intersection node
         aux = headB;
