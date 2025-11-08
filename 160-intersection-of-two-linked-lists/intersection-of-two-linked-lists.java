@@ -18,21 +18,21 @@ public class Solution {
 
         // Iterate over the A list and add nodes to the map
         if (headA.next == null) map.put(headA, true);
-        ListNode auxA = headA;
-        while (auxA.next != null) {
-            map.put(auxA, true);
-            auxA = auxA.next;
+        ListNode aux = headA;
+        while (aux.next != null) {
+            map.put(aux, true);
+            aux = aux.next;
         }
-        map.put(auxA, true);
+        map.put(aux, true);
 
         // Iterate over the B list and check if there is an intersection node
-        ListNode auxB = headB;
-        while (auxB.next != null) {
-            if (map.get(auxB) != null) return auxB;
+        aux = headB;
+        while (aux.next != null) {
+            if (map.get(aux) != null) return aux;
 
-            auxB = auxB.next;
+            aux = aux.next;
         }
-        if (map.get(auxB) != null) return auxB;
+        if (map.get(aux) != null) return aux;
 
         return null;
     }
